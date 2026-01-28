@@ -1,6 +1,8 @@
 # Sistema de Gestión de Viajes(SAP BTP)
 
 Aplicación Full-Stack Cloud Native desarrollada en **SAP BTP ABAP Environment** utilizando el modelo de programación **RAP** (RESTful Application Programming Model).
+# Te gusta lo que ves? Contáctame!
+https://www.linkedin.com/in/juan-marcos-sangiovanni-4162b5263/
 
 ## Objetivo
 El Objetivo del Proyecto era desarrollar una solución real para la gestión de actividades reales. Opté por desarrollar una app robusta para la gestión de viajes corporativos, demostrando el ciclo completo de desarrollo en la nube de SAP, desde la persistencia de datos hasta la interfaz de usuario Fiori.
