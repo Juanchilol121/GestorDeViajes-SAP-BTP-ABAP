@@ -15,6 +15,9 @@ Pantalla de Creación de Viaje:
 Pantalla de error al poner Datos erroneos (fecha de inicio posterior a decha de finalización)
 <img width="1901" height="907" alt="image" src="https://github.com/user-attachments/assets/5f65fd4b-63b3-40c0-ba5e-51c381c38401" />
 
+## VIDEO EJEMPLO DE USO
+
+https://github.com/user-attachments/assets/9add0b8f-9859-4d44-8b51-f2261f188a97
 
 
 
