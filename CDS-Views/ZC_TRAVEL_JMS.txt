@@ -1,0 +1,58 @@
+@EndUserText.label: 'Proyeccion de Viajes'
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@Metadata.allowExtensions: true
+
+@UI: {
+ headerInfo: { typeName: 'Travel', typeNamePlural: 'Travels', title: { type: #STANDARD, value: 'TravelID' } }
+}
+
+define root view entity ZC_TRAVEL_JMS
+  provider contract transactional_query
+  as projection on ZI_TRAVEL_JMS
+{
+      @UI.facet: [ { id:              'Travel',
+                     purpose:         #STANDARD,
+                     type:            #IDENTIFICATION_REFERENCE,
+                     label:           'Travel',
+                     position:        10 } ]
+
+      @UI: { lineItem:       [ { position: 10 } ],
+             identification: [ { position: 10 } ] }
+  key TravelID,
+
+      @UI: { lineItem:       [ { position: 20 } ],
+             identification: [ { position: 20 } ] }
+      AgencyID,
+
+      @UI: { lineItem:       [ { position: 30 } ],
+             identification: [ { position: 30 } ] }
+      CustomerID,
+
+      @UI: { lineItem:       [ { position: 40 } ],
+             identification: [ { position: 40 } ] }
+      BeginDate,
+
+      @UI: { lineItem:       [ { position: 50 } ],
+             identification: [ { position: 50 } ] }
+      EndDate,
+
+      @UI: { lineItem:       [ { position: 60 } ],
+             identification: [ { position: 60 } ] }
+      BookingFee,
+
+      @UI: { lineItem:       [ { position: 70 } ],
+             identification: [ { position: 70 } ] }
+      TotalPrice,
+
+      CurrencyCode,
+
+      @UI: { lineItem:       [ { position: 80 } ],
+             identification: [ { position: 80 } ] }
+      Description,
+
+      @UI: { lineItem:       [ { position: 90 } ],
+             identification: [ { position: 90 } ] }
+      OverallStatus,
+
+      LastChangedAt
+}
