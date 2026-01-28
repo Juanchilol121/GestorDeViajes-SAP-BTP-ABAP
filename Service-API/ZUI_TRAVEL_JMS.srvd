@@ -1,0 +1,4 @@
+@EndUserText.label: 'Definicion del servicio de viajes'
+define service ZUI_TRAVEL_JMS {
+  expose ZC_TRAVEL_JMS as Travel;
+}
