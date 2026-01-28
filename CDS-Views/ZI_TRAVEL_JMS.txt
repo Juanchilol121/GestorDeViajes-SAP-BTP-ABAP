@@ -1,36 +1,41 @@
-managed implementation in class zbp_i_travel_jms unique;
-//strict ( 2 );
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Vista de Interfaz de Viajes'
 
-define behavior for ZI_TRAVEL_JMS alias Travel
-persistent table ztravel_jms
-lock master
-//authorization master ( instance )
-// etag master LastChangedAt
+define root view entity ZI_TRAVEL_JMS
+  as select from ztravel_jms as Travel
 {
-  create;
-  update;
-  delete;
+  key travel_id       as TravelID,
+  
+      agency_id       as AgencyID,
+      
+      customer_id     as CustomerID,
+      
+      begin_date      as BeginDate,
+      
+      end_date        as EndDate,
+      
+      @Semantics.amount.currencyCode: 'CurrencyCode'
+      booking_fee     as BookingFee,
+      
+      @Semantics.amount.currencyCode: 'CurrencyCode'
+      total_price     as TotalPrice,
+      
+      currency_code   as CurrencyCode,
+      
+      description     as Description,
+      
+      overall_status  as OverallStatus,
+      
+      @Semantics.user.createdBy: true
+      created_by      as CreatedBy,
+      
+      @Semantics.systemDateTime.createdAt: true
+      created_at      as CreatedAt,
+      
+      @Semantics.user.lastChangedBy: true
+      last_changed_by as LastChangedBy,
+      
+      @Semantics.systemDateTime.lastChangedAt: true
+      last_changed_at as LastChangedAt
 
-  validation validateDates on save { field BeginDate, EndDate; create; update; }
-
-  field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt;
-  field ( mandatory ) AgencyID, CustomerID, BeginDate;
-
-  mapping for ztravel_jms
-  {
-    TravelID = travel_id;
-    AgencyID = agency_id;
-    CustomerID = customer_id;
-    BeginDate = begin_date;
-    EndDate = end_date;
-    BookingFee = booking_fee;
-    TotalPrice = total_price;
-    CurrencyCode = currency_code;
-    Description = description;
-    OverallStatus = overall_status;
-    CreatedBy = created_by;
-    CreatedAt = created_at;
-    LastChangedBy = last_changed_by;
-    LastChangedAt = last_changed_at;
-  }
 }
